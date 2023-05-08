@@ -140,7 +140,7 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
 
 streamlit.header('Add your Sandwich Requirements Below')
 
-max_price_input = streamlit.number_input('Price Max', min_value = 0)
+max_price_input = streamlit.number_input('Price Max', min_value = 7.99)
 temp_input = streamlit.selectbox('Hot or Cold?',  options = temp)
 veggies_input = streamlit.number_input('Number of Veggies', min_value = 0, max_value = 10)
 sauces_input = streamlit.number_input('Number of Sauces', min_value = 0, max_value = 11)
