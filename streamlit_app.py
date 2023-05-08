@@ -5,6 +5,15 @@ import random
 import re
 import fnmatch
 
+# Streamlit Requirements
+import streamlit
+import requests
+from urllib.error import URLError
+
+streamlit.title('Farmer Joes Sandwich Randomizer')
+
+
+streamlit.header('Ingredients List')
 # Ingredients List
 temp = ['Hot','Cold']
 meat = ['Roast Turkey','Smoked Turkey','Grilled Chicken Breast','Roast Beef','Corned Beef','Pastrami','Black Forest Ham','Organic Smoked Tofu','Dry Salami','Tuna Salad','Chicken Salad','Prosciutto','Hot Coppa','Mild Coppa','Honey Ham']
