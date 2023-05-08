@@ -16,6 +16,7 @@ streamlit.title('Farmer Joes Sandwich Randomizer')
 streamlit.header('Ingredients List')
 # Ingredients List
 temp = ['Hot','Cold']
+temp_list = pd.DataFrame(temp, columns = ['Temperature'])
 meat = ['Roast Turkey','Smoked Turkey','Grilled Chicken Breast','Roast Beef','Corned Beef','Pastrami','Black Forest Ham','Organic Smoked Tofu','Dry Salami','Tuna Salad','Chicken Salad','Prosciutto','Hot Coppa','Mild Coppa','Honey Ham']
 greens = ['lettuce','tomato','red onions','pickles','pepperoncinis','mixed greens','arugula','sprouts','basil','jalapenos']
 spreads = ['mayonnaise','deli mustard','dijon mustard','aioli','chipotle mayo','mendocino mustard','basil pesto','hummus','cranberry sauce','sundried tomato pesto','balsamic vinagrette']
@@ -24,7 +25,9 @@ cheese = ['pepperjack','monterey jack','swiss','mozzarella','smoked gouda','hava
 extra = ['double meat','double cheese','avocado','guacamole','bacon','olive oil & vinegar','roasted red peppers','goat cheese','cream cheese']
 separator = ","
 all_ingredients = temp + meat + greens + spreads + bread + cheese + extra
-streamlit.dataframe(all_ingredients)
+
+# Streamlit Lists to =Show
+streamlit.dataframe(temp_list)
 
 # Dictionaries
 everything = {'Hot':0,'Cold':0,'Roast Turkey':0,'Smoked Turkey':0,'Grilled Chicken Breast':0,'Roast Beef':0,'Corned Beef':0,'Pastrami':0,'Black Forest Ham':0,'Organic Smoked Tofu':0,'Dry Salami':0,'Tuna Salad':0,'Chicken Salad':0,'Prosciutto':1,'Hot Coppa':1,'Mild Coppa':1,'Honey Ham':0.75,'lettuce':0,'tomato':0,'red onions':0,'pickles':0,'pepperoncinis':0,'mixed greens':0,'arugula':0,'sprouts':0,'basil':0,'jalapenos':0,'mayonnaise':0,'deli mustard':0,'dijon mustard':0,'aioli':0,'chipotle mayo':0,'mendocino mustard':0,'basil pesto':0,'hummus':0,'cranberry sauce':0,'sundried tomato pesto':0,'balsamic vinagrette':0,'sliced wheat':0,'sliced rye':0,'sliced white':0,'sliced sourdough':0,'french roll (soft)':0,'sourdough roll':0,'wheat roll':0,'rosemary focaccia':0,'ciabatta':0,'dutch crunch':0,'pepperjack':0,'monterey jack':0,'swiss':0,'mozzarella':0,'smoked gouda':0,'havarti':0,'meunster':0,'provolone':0,'american white cheese':0,'american yellow cheese':0,'cheddar':0,'no cheese':0,'double meat':2,'double cheese':0.75,'avocado':0.75,'guacamole':0.75,'bacon':1,'olive oil & vinegar':0,'roasted red peppers':0.75,'goat cheese':0.75,'cream cheese':0.75,'':0}
