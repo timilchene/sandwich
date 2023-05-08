@@ -146,6 +146,12 @@ veggies_input = streamlit.number_input('Number of Veggies', min_value = 0, max_v
 sauces_input = streamlit.number_input('Number of Sauces', min_value = 0, max_value = 11)
 extras_input = streamlit.number_input('Number of Extras', min_value = 0, max_value = 8)
 
-streamlit.write('You selected: ', 'Max price: $' max_price_input, temp_input, veggies_input, sauces_input, extras_input)
+streamlit.write('You selected: $', max_price_input, temp_input, veggies_input, sauces_input, extras_input)
 
-sandwich_maker(14,"blank",4,3,4)
+streamlit.button('Randomize Your Sandwich!', args = [max_price_input, temp_input, veggies_input, sauces_input, extras_input])
+
+
+output = sandwich_maker(max_price_input, temp_input, veggies_input, sauces_input, extras_input)
+#output = sandwich_maker(14,"blank",4,3,4)
+
+streamlit.write(output)
