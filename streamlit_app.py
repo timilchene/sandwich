@@ -13,7 +13,7 @@ from urllib.error import URLError
 streamlit.title('Farmer Joes Sandwich Randomizer')
 
 
-streamlit.header('Sandwich Choices List')
+streamlit.header('Sandwich Ingredients List')
 # Ingredients List
 temp = ['Hot','Cold']
 temp_list = pd.DataFrame(temp, columns = ['Temperature'])
@@ -138,4 +138,6 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
 
 # Most recent changes: While -> if statements for performance
 
-sandwich_maker(14,"blank",4,3,4)
+max_price_input = streamlit.number_input('Price Max', min_value = 0,)
+
+sandwich_maker(14,"blank",4,3,4)ß
