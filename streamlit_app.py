@@ -140,4 +140,4 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
 
 max_price_input = streamlit.number_input('Price Max', min_value = 0,)
 
-sandwich_maker(14,"blank",4,3,4)ß
+sandwich_maker(14,"blank",4,3,4)
