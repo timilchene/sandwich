@@ -58,7 +58,7 @@ def compute_price(ingredients):
 
 
 
-# Final Version
+# Final Version for Streamlit
 
 def sandwich_maker(max_price,temperature,veggies,sauces,extras):
     # Max price is max amount you want to pay
@@ -66,22 +66,22 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
     #sandwich = str(random.choice(temp)) + " " + str(random.choice(meat))+ " Sandwich with " + str(separator.join(random.sample(greens,x)))+ ", " + str(separator.join(random.sample(spreads,y)))+ " on " + str(random.choice(bread)) + " with " + str(random.choice(cheese))+'.'+" Add " +str(separator.join(random.sample(extras,z)))+"."
     if veggies < 0: # Checks for negatives
         veggies = 0
-        print("You can't have negative vegetables!")
+        streamlit.write("You can't have negative vegetables!")
     if veggies > 10: # Checks for values greater than total veggies possible
         veggies = 10
-        print("There are only 10 total vegetables!")
+        streamlit.write("There are only 10 total vegetables!")
     if sauces < 0:
         sauces = 0
-        print("You can't have negative sauces!")
+        streamlit.write("You can't have negative sauces!")
     if sauces > 11:
         sauces = 11
-        print("There are only 11 total sauces!")
+        streamlit.write("There are only 11 total sauces!")
     if extras < 0:
         extras = 0
-        print("You can't have negative extras!")
+        streamlit.write("You can't have negative extras!")
     if extras > 8:
         extras = 8 
-        print("There are only 8 total extras!")
+        streamlit.write("There are only 8 total extras!")
     if fnmatch.fnmatch(temperature.lower(), "*hot*"): #  if fnmatch.fnmatch(file, '*.txt'):
         rt = temp[0] # Changed to use temp list
     elif fnmatch.fnmatch(temperature.lower(), "*cold*"):
@@ -100,7 +100,7 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
     sandwich3 = sandwich2.split(",")
     cost = compute_price(sandwich3)
     if max_price < 7.99: # Updated price
-        print("No sandwich is this cheap!")
+        streamlit.write("No sandwich is this cheap!")
     else:
         while cost > max_price:
                 # rt = random.choice(temp)# Here is where temp issue arises     
@@ -115,23 +115,23 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
                 sandwich3 = sandwich2.split(",")
                 cost = compute_price(sandwich3)
                 extras = abs(extras-1)
-                print("Extra or premium additions have been lowered by 1 or changed to accomodate price")
+                streamlit.write("Extra or premium additions have been lowered by 1 or changed to accomodate price")
         if cost <= max_price:
             sandwich2 = f"{rt},{rm},{rb},{rc},{rv},{rs},{ree}"
             sandwich3 = sandwich2.split(",")
             cost = compute_price(sandwich3)
             if ree == "": # Basically if extras are all removed
-                print(f"This Sandwich costs ${cost}") # Sick 
+                streamlit.write(f"This Sandwich costs ${cost}") # Sick 
                 sandwich = f"{rt} {rm} Sandwich on {rb},with {rc},{rv},{rs}."
                 sandwich_remove_commas = sandwich.replace(",,",",")
                 sandwich_final = sandwich_remove_commas.replace(",",", ")
-                print(sandwich_final)
+                streamlit.write(sandwich_final)
             else:
-                print(f"This Sandwich costs ${cost}") # Sick 
+                streamlit.write(f"This Sandwich costs ${cost}") # Sick 
                 sandwich = f"{rt} {rm} Sandwich on {rb},with {rc},{rv},{rs}. Add {ree}."
                 sandwich_remove_commas = sandwich.replace(",,",",")
                 sandwich_final = sandwich_remove_commas.replace(",",", ")
-                print(sandwich_final)
+                streamlit.write(sandwich_final)
             #sandwich = rt + " " + rm + " Sandwich on " + rb + ", with " + rc + ", " + rv + " " + rs + ". Add " + ree + "."
             #sandwich = str(sandwich2[0])+ " " +str(sandwich2[1])+ " Sandwich on " + str(sandwich2[2]) + ", with " + str(sandwich2[3]) + " ," + str(sandwich2[4:4+veggies]) + " with " + str(sandwich2[4+veggies:4+veggies+sauces]) + ". Add " + str(sandwich2[4+veggies+sauces:4+veggies+sauces+extras])
     return
