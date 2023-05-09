@@ -151,7 +151,7 @@ streamlit.write('You selected: $', max_price_input, temp_input, veggies_input, s
 streamlit.button('Randomize Your Sandwich!', args = [max_price_input, temp_input, veggies_input, sauces_input, extras_input])
 
 
-#output = sandwich_maker(max_price_input, temp_input, veggies_input, sauces_input, extras_input)
+output = sandwich_maker(max_price_input, temp_input, veggies_input, sauces_input, extras_input)
 #output = sandwich_maker(14,"blank",4,3,4)
 
 #streamlit.write(output)
