@@ -124,13 +124,15 @@ def sandwich_maker(max_price,temperature,veggies,sauces,extras):
                 streamlit.write(f"This Sandwich costs ${cost}") # Sick 
                 sandwich = f"{rt} {rm} Sandwich on {rb},with {rc},{rv},{rs}."
                 sandwich_remove_commas = sandwich.replace(",,",",")
-                sandwich_final = sandwich_remove_commas.replace(",",", ")
+                sandwich_remove_errors = sandwich_remove_commas.replace(",.",".")
+                sandwich_final = sandwich_remove_errors.replace(",",", ")
                 streamlit.write(sandwich_final)
             else:
                 streamlit.write(f"This Sandwich costs ${cost}") # Sick 
                 sandwich = f"{rt} {rm} Sandwich on {rb},with {rc},{rv},{rs}. Add {ree}."
                 sandwich_remove_commas = sandwich.replace(",,",",")
-                sandwich_final = sandwich_remove_commas.replace(",",", ")
+                sandwich_remove_errors = sandwich_remove_commas.replace(",.",".")
+                sandwich_final = sandwich_remove_errors.replace(",",", ")
                 streamlit.write(sandwich_final)
             #sandwich = rt + " " + rm + " Sandwich on " + rb + ", with " + rc + ", " + rv + " " + rs + ". Add " + ree + "."
             #sandwich = str(sandwich2[0])+ " " +str(sandwich2[1])+ " Sandwich on " + str(sandwich2[2]) + ", with " + str(sandwich2[3]) + " ," + str(sandwich2[4:4+veggies]) + " with " + str(sandwich2[4+veggies:4+veggies+sauces]) + ". Add " + str(sandwich2[4+veggies+sauces:4+veggies+sauces+extras])
